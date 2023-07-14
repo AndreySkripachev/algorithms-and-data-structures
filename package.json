@@ -1,0 +1,28 @@
+{
+  "name": "algorithms-and-data-structures",
+  "version": "1.0.0",
+  "description": "A repository containing the basics of algorithms and data structures",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreySkripachev/algorithms-and-data-structures.git"
+  },
+  "keywords": [
+    "Algorithms",
+    "Data",
+    "Structures",
+    "TypeScript"
+  ],
+  "author": "Andrey Skripachev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AndreySkripachev/algorithms-and-data-structures/issues"
+  },
+  "homepage": "https://github.com/AndreySkripachev/algorithms-and-data-structures#readme",
+  "devDependencies": {
+    "typescript": "^5.1.6"
+  }
+}
