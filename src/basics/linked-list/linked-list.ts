@@ -10,14 +10,14 @@ export class ListNode<T> {
 /** Linked list. */
 export class LinkedList<T> {
 
-  public head: ListNode<T> | null = null;
+  public value: T | null = null;
 
   /** List of nodes. */
   public tail: LinkedList<T> | null = null;
 
   public constructor(value?: T) {
     if (value !== undefined && value !== null) {
-      this.head = new ListNode(value);
+      this.value = value;
     }
   }
 
@@ -28,9 +28,9 @@ export class LinkedList<T> {
     return list;
   }
 
-  /** Gets value from head. */
-  public get value(): T | null {
-    return this.head?.value ?? null;
+  protected removeNode(): void {
+    this.value = this.tail?.value ?? null;
+    this.tail = this.tail?.tail ?? null;
   }
 
   /**
@@ -49,7 +49,7 @@ export class LinkedList<T> {
     }
 
     if (current.value === null) {
-      current.head = new ListNode(value);
+      current.value = value;
     } else {
       current.tail = new LinkedList(value);
     }
@@ -71,8 +71,7 @@ export class LinkedList<T> {
 
     while (current !== null) {
       if (current.value === value) {
-        this.head = this.tail?.head ?? null;
-        this.tail = this.tail?.tail ?? null;
+        current.removeNode();
       } else {
         current = current.tail;
       }

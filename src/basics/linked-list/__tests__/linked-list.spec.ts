@@ -1,5 +1,8 @@
 import { faker } from '@faker-js/faker';
 
+import { generateArrayOfIdenticalMembers, generateRandomArray } from '../../../../utils/tests/array';
+import { randomInt } from '../../../../utils/tests/number';
+
 import { LinkedList, ListNode } from '../linked-list'
 
 interface Config {
@@ -18,21 +21,6 @@ const createConfig = (
     arrayOfItems: items,
     list,
   };
-}
-
-const randomInt = () => faker.number.int({ max: 1000, min: -1000 })
-
-const generateRandomArray = (length = 10) => {
-  const array = new Array<number>(length);
-  array.fill(0).map(randomInt);
-
-  return array;
-}
-
-const generateArrayOfIdenticalMembers = (length = 10) => {
-  const array = new Array<number>(length).fill(randomInt());
-
-  return array;
 }
 
 describe('LinkedList', () => {
