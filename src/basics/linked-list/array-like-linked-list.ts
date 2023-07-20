@@ -186,13 +186,19 @@ export class ArrayLikeLinkedList<T> extends LinkedList<T> {
    */
   public filter(predicate: (element: ArrayLikeLinkedList<T>) => boolean): ArrayLikeLinkedList<T> {
     let current: ArrayLikeLinkedList<T> | null = this;
+    let previous: ArrayLikeLinkedList<T> | null = null;
 
     while (current !== null) {
       if (predicate(current)) {
-        current = current.tail;
+        previous = current;
       } else {
-        current.removeNode();
+        if (previous === null) {
+          current.removeNode();
+        } else {
+          previous.tail = current.tail;
+        }
       }
+      current = current.tail;
     }
 
     return this;
