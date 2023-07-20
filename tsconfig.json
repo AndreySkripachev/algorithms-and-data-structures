@@ -5,6 +5,9 @@
     "module": "ESNext",
     "target": "ESNext",
     "jsx": "react",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "alwaysStrict": true,
   }
 }
