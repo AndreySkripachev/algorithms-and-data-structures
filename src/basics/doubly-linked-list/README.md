@@ -51,4 +51,4 @@ And also in graphic form:
 
 ## Basic principles of working with the list
 
-I think there is no point in explaining list operations now, since the principle is no different from working with ordinary linked lists. But you need to be careful and keep the links intact.
+I think there is no point in explaining list operations now, since the principle is no different from working with ordinary linked lists, except that you need to manage links to both the previous and the next node intelligently. You can familiarize yourself with the basic operations [here](../linked-list).
