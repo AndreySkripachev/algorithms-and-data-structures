@@ -1,7 +1,7 @@
 import { generateArrayOfIdenticalMembers, generateRandomArray } from '../../../../utils/tests/array';
 import { randomInt } from '../../../../utils/tests/number';
 
-import { LinkedList } from '../linked-list'
+import { LinkedList } from '../linked-list';
 
 interface Config {
   readonly list: LinkedList<number>;

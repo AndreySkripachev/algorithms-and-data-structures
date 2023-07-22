@@ -1,12 +1,10 @@
-type Nullable<T> = T | null;
-
 export class DoublyLinkedList<T> {
 
   /** Follow list node. */
-  public next: Nullable<DoublyLinkedList<T>> = null;
+  public next: DoublyLinkedList<T> | null = null;
 
   /** Previous list node. */
-  public prev: Nullable<DoublyLinkedList<T>> = null;
+  public prev: DoublyLinkedList<T> | null = null;
 
   public constructor(
 

@@ -1,9 +1,5 @@
-import { LinkedList } from "../../src/basics/linked-list/linked-list";
-import { randomInt } from "./number";
-
 interface ListBase<T> {
   value: T | null;
-
   next: ListBase<T> | null;
 }
 

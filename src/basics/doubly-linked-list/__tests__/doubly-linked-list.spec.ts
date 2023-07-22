@@ -20,7 +20,8 @@ const createConfig = (
   const list = new DoublyLinkedList(items[0]);
 
   for (let i=1, curr = list; i < items.length; i++) {
-    curr = curr.append(new DoublyLinkedList(items[i]));
+    curr.next = new DoublyLinkedList(items[i]);
+    curr = curr.next;
   }
 
   return {
@@ -57,7 +58,6 @@ describe('DoublyLinkedList', () => {
     const { list, length } = createConfig(generateRandomArray);
     const removableListItem = <DoublyLinkedList<number>>list.next;
     removableListItem.remove();
-
 
     expect(list.length).toStrictEqual(length - 1);
     expect(removableListItem.next).toStrictEqual(null);

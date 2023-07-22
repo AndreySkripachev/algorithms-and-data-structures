@@ -18,10 +18,3 @@ export const generateRandomPositiveArray = (length = DEFAULT_LENGTH) => {
   array.fill(0);
   return array.map(() => randomInt(0));
 }
-
-export const generateSequence = (length = DEFAULT_LENGTH) => {
-  const array = new Array<number>(length);
-  array.fill(0);
-
-  return array.map((_e, i) => i);
-}
