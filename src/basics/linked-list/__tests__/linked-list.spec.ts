@@ -1,7 +1,7 @@
-import { generateArrayOfIdenticalMembers, generateRandomArray } from '../../../../utils/tests/array';
+import { NumericArrayGenerator, generateArrayOfIdenticalMembers, generateRandomArray } from '../../../../utils/tests/array';
 import { randomInt } from '../../../../utils/tests/number';
 
-import { LinkedList } from '../linked-list';
+import { LinkedList } from '../';
 
 interface Config {
   readonly list: LinkedList<number>;
@@ -10,7 +10,7 @@ interface Config {
 }
 
 const createConfig = (
-  arrayGenerator: () => readonly number[]
+  arrayGenerator: NumericArrayGenerator,
 ): Config => {
   const items = arrayGenerator();
   const list = LinkedList.fromArray(items);

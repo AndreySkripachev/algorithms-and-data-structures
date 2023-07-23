@@ -1,8 +1,8 @@
-import { generateRandomArray, generateRandomPositiveArray } from '../../../../utils/tests/array';
+import { NumericArrayGenerator, generateRandomArray, generateRandomPositiveArray } from '../../../../utils/tests/array';
 import { expectEqualArrays } from '../../../../utils/tests/expect';
 import { randomInt, randomPositive } from '../../../../utils/tests/number';
 
-import { ArrayLikeLinkedList } from '../array-like-linked-list';
+import { ArrayLikeLinkedList } from '../';
 
 interface Config {
   readonly length: number;
@@ -13,7 +13,7 @@ interface Config {
 }
 
 const createConfig = (
-  generateArray: (length: number) => readonly number[],
+  generateArray: NumericArrayGenerator,
   length = 10,
 ): Config => {
   const array = generateArray(length);

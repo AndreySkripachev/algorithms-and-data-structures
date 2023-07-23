@@ -1,6 +1,6 @@
 import { randomInt } from '../../../../utils/tests/number';
 
-import { Queue } from '../queue';
+import { Queue } from '../';
 
 interface Config {
   readonly value1: number;
