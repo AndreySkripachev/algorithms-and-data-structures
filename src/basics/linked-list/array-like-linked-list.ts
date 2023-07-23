@@ -175,36 +175,6 @@ export class ArrayLikeLinkedList<T> extends LinkedList<T> {
   }
 
   /**
-   * Filters the list by predicate.
-   * @param predicate Predicate.
-   *
-   * @example
-   * const list = new ArrayLikeLinkedList();
-   * list.push(1, 2, 3, 4);
-   *
-   * list.filter(el => el.value < 3); // 1 -> 2.
-   */
-  public filter(predicate: (element: ArrayLikeLinkedList<T>) => boolean): ArrayLikeLinkedList<T> {
-    let current: ArrayLikeLinkedList<T> | null = this;
-    let previous: ArrayLikeLinkedList<T> | null = null;
-
-    while (current !== null) {
-      if (predicate(current)) {
-        previous = current;
-      } else {
-        if (previous === null) {
-          current.removeNode();
-        } else {
-          previous.tail = current.tail;
-        }
-      }
-      current = current.tail;
-    }
-
-    return this;
-  }
-
-  /**
    * The value that results from running the "reducer" callback function to completion over the entire array.
    * @param callbackFn A function to execute for each element in the list.
    * Its return value becomes the value of the accumulator parameter on the next invocation of callbackFn.
