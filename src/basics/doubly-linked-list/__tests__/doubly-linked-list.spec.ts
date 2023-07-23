@@ -1,5 +1,6 @@
 import { DEFAULT_LENGTH, generateRandomArray } from "../../../../utils/tests/array";
 import { expectEqualArrays } from "../../../../utils/tests/expect";
+import { getRandomListItem } from "../../../../utils/tests/lists";
 import { randomInt } from "../../../../utils/tests/number";
 
 import { DoublyLinkedList } from "../doubly-linked-list";
@@ -21,6 +22,7 @@ const createConfig = (
 
   for (let i=1, curr = list; i < items.length; i++) {
     curr.next = new DoublyLinkedList(items[i]);
+    curr.next.prev = curr;
     curr = curr.next;
   }
 
@@ -49,14 +51,14 @@ describe('DoublyLinkedList', () => {
 
   test('should return the first node of the list', () => {
     const { list } = createConfig(generateRandomArray);
-    const nonFirstListItem = <DoublyLinkedList<number>>list.next?.next;
+    const nonFirstListItem = getRandomListItem(list);
 
     expect(nonFirstListItem.first()).toStrictEqual(list);
   });
 
   test('should delete a list item', () => {
     const { list, length } = createConfig(generateRandomArray);
-    const removableListItem = <DoublyLinkedList<number>>list.next;
+    const removableListItem = getRandomListItem(list);
     removableListItem.remove();
 
     expect(list.length).toStrictEqual(length - 1);
