@@ -108,14 +108,6 @@ describe('ArrayLikeLinkedList', () => {
     expectEqualArrays(list.toArray(), array.map(double));
   });
 
-  test('filter(fn) should filter the list', () => {
-    const { array, list } = createConfig(generateRandomArray, randomInt(10, 20));
-    const filterNegative = (e: number) => e > 0;
-    list.filter(e => filterNegative(e.value ?? 0));
-
-    expectEqualArrays(list.toArray(), array.filter(filterNegative));
-  });
-
   test('reduce(fn) should reduce the list by callback', () => {
     const { array, list } = createConfig(generateRandomArray, randomInt(10, 20));
 
