@@ -29,7 +29,7 @@ describe('Stack', () => {
     expect(stack.peek()).toStrictEqual(value1);
   });
 
-  it('.enstack(x) should add items to the end of the stack', () => {
+  it('.push(x) should add items to the end of the stack', () => {
     const { value1, value2 } = createConfig();
     const stack = new Stack<number>();
     stack.push(value1).push(value2);
@@ -44,7 +44,7 @@ describe('Stack', () => {
     expect(stack.peek()).toStrictEqual(value2);
   });
 
-  it('.destack(x) should returns the first item in the stack and remove it', () => {
+  it('.pop(x) should returns the first item in the stack and remove it', () => {
     const { value1, value2, stack } = createConfig();
 
     expect(stack.pop()).toStrictEqual(value2);
