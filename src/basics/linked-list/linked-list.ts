@@ -1,12 +1,3 @@
-
-/** List node. */
-export class ListNode<T> {
-
-  public constructor(
-    public value: T
-  ) {}
-}
-
 /** Linked list. */
 export class LinkedList<T> {
 

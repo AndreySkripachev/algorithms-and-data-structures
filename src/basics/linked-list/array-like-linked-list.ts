@@ -1,8 +1,7 @@
-import { LinkedList, ListNode } from './linked-list';
+import { LinkedList } from './linked-list';
 
 interface NonNullableValue<T> extends ArrayLikeLinkedList<T> {
   value: T;
-  head: ListNode<T>;
 }
 
 export class ArrayLikeLinkedList<T> extends LinkedList<T> {

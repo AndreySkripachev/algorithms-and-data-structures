@@ -1,9 +1,9 @@
-import { DEFAULT_LENGTH, generateRandomArray } from "../../../../utils/tests/array";
-import { expectEqualArrays } from "../../../../utils/tests/expect";
-import { getRandomListItem } from "../../../../utils/tests/lists";
-import { randomInt } from "../../../../utils/tests/number";
+import { DEFAULT_LENGTH, NumericArrayGenerator, generateRandomArray } from '../../../../utils/tests/array';
+import { expectEqualArrays } from '../../../../utils/tests/expect';
+import { getRandomListItem } from '../../../../utils/tests/lists';
+import { randomInt } from '../../../../utils/tests/number';
 
-import { DoublyLinkedList } from "../doubly-linked-list";
+import { DoublyLinkedList } from '../';
 
 interface Config {
   readonly list: DoublyLinkedList<number>;
@@ -14,7 +14,7 @@ interface Config {
 }
 
 const createConfig = (
-  generateArray: (length: number) => readonly number[],
+  generateArray: NumericArrayGenerator,
   length = DEFAULT_LENGTH,
 ): Config => {
   const items = generateArray(length);
